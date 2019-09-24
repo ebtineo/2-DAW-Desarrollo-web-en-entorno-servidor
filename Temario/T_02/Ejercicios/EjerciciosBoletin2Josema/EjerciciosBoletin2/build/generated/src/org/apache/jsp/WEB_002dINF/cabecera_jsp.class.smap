@@ -1,0 +1,11 @@
+SMAP
+cabecera_jsp.java
+JSP
+*S JSP
+*F
++ 0 cabecera.jsp
+WEB-INF/cabecera.jsp
+*L
+5,2:44
+8,5:47
+*E

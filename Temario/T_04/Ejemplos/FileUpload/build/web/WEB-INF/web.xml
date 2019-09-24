@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>Upload</servlet-name>
+        <servlet-class>servlet.Upload</servlet-class>
+        <multipart-config>
+            <location>/</location>
+            <max-file-size>1000000</max-file-size>
+            <file-size-threshold>1000000</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet>
+        <servlet-name>UploadStream</servlet-name>
+        <servlet-class>servlet.UploadStream</servlet-class>
+        <multipart-config>
+            <max-file-size>1000000</max-file-size>
+            <file-size-threshold>1000000</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet>
+        <servlet-name>UploadAjax</servlet-name>
+        <servlet-class>servlet.UploadAjax</servlet-class>
+        <multipart-config>
+            <max-file-size>1000000</max-file-size>
+            <file-size-threshold>1000000</file-size-threshold>
+        </multipart-config>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Upload</servlet-name>
+        <url-pattern>/Upload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadStream</servlet-name>
+        <url-pattern>/UploadStream</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UploadAjax</servlet-name>
+        <url-pattern>/UploadAjax</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script>
+            function subirFichero() {
+                var data = new FormData();
+                jQuery.each(jQuery('#fichero')[0].files, function(i, file) {
+                    data.append('fichero', file);
+                });
+            jQuery.ajax({
+                url: 'UploadAjax',
+                data: data,
+                cache: false,
+                contentType: false,
+                processData: false,
+                method: 'POST',
+                type: 'POST', // For jQuery < 1.9
+                success: function(data){
+                    alert(data);
+                }
+            });
+    }
+        </script>
+    </head>
+    <body>
+        <div>
+            <h3>Con el método write</h3>
+            <form action="Upload" method="post"  enctype="multipart/form-data">
+                <input type="file" name="fichero"><br>
+                <input type="submit">
+            </form>
+        </div>
+        <div>
+            <h3>Con el método getInputStream</h3>
+            <form action="UploadStream" method="post" enctype="multipart/form-data">
+                <input type="file" name="fichero"><br>
+                <input type="submit">
+            </form>
+        </div>
+        <div>
+            <h3>Con Ajax</h3>
+            <form method="post" enctype="multipart/form-data" id="formFichero"> 
+            </form>    
+                <input type="file" id="fichero"><br>
+                <button onclick="subirFichero()">Subir</button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<html lang="es">
+<head>
+  <meta charset="iso-8859-1">
+  <title>Inserción datos empleados</title>
+</head>
+<body>
+
+  <h3>Inserción datos empleados</h3>
+  <form action="ejercicio6" method="get">
+    <fieldset>
+      <legend>Datos personales!</legend>
+      <p>Nombre: <input type="text" name="inNombre"></p>
+      <p>Primer apellido: <input type="text" name="inApellido1"></p>
+      <p>Segundo apellido: <input type="text" name="inApellido2"></p>
+      <p>Fecha de nacimiento <input type="date" name="fecha"></p>
+    </fieldset>
+    <fieldset>
+      <legend>Categoría</legend>
+      <input type="radio" name="categoria" value="tecnico" checked> Tecnico<br>
+      <input type="radio" name="categoria" value="auxiliar"> Auxiliar<br>
+      <input type="radio" name="categoria" value="peon"> Peon
+    </fieldset>
+    <fieldset>
+      <legend>Sectores</legend>
+      <small>Selección múltiple</small>
+      <p>Sectores en los que tiene experiencia</p>
+      <select name="sectores" multiple size="5">
+        <option value="electronica">Electrónica</option>
+        <option value="mecanica">Mecánica</option>
+        <option value="pintura">Pintura</option>
+        <option value="tapiceria">Tapicería</option>
+        <option value="neumaticos">Neumáticos</option>
+      </select>
+    </fieldset>
+    <input type="submit" name="boton" value="Enviar" style="width:100px; margin-top:20px;">
+  </form>
+</body>
+</html>

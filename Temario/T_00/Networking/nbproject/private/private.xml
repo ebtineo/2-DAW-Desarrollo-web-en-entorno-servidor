@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/fileserver_v1/FileClientV1.java</file>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/peticiones/VerPeticion.java</file>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/fileserver/FileClient.java</file>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/url/MostrarHTML.java</file>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/sockets/ClienteEco.java</file>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/minichat/MiniChatServer.java</file>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/minichat/MiniChatClientv2.java</file>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/timeserver/TimeHTTPServer.java</file>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/fileserver_v1/FileServerV1.java</file>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/echo/EchoServer.java</file>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/sockets/ConexionSocket.java</file>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/minichat/MiniChatClient.java</file>
+            <file>file:/home/jose/NetBeansProjects/Networking/src/fileserver/FileServer.java</file>
+        </group>
+    </open-files>
+</project-private>

@@ -1,0 +1,21 @@
+SMAP
+convertirTemperaturas_jsp.java
+JSP
+*S JSP
+*F
++ 0 convertirTemperaturas.jsp
+convertirTemperaturas.jsp
+*L
+5,4:44
+8:47,9
+9,2:56,3
+11,4:62
+14:66
+15:67,2
+17,2:70
+18,16:72
+34:88,3
+35,4:91
+39:95,3
+40,7:98
+*E
