@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package b_02;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -15,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author WorKeLid
  */
-public class HolaMundo extends HttpServlet {
+public class B_02_ej_02 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,14 +31,20 @@ public class HolaMundo extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            
+            String in = request.getParameter("nombre");
+            //int i = (int) in;
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet HolaMundo</title>");            
+            out.println("<title>Servlet B_02_ej_02</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet HolaMundo at " + request.getContextPath() + "</h1>");
+            out.println("<p>" + 
+                    "Bol_02_ej02 - Realizar una aplicación web que pida una frase al usuario y la muestre en mayúsculas" + 
+                    "/<p>");
+            out.println("<p>Texto introducido: " + in.toUpperCase() + "</p>");
             out.println("</body>");
             out.println("</html>");
         }

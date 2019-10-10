@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>numeroAleatorio</servlet-name>
+        <servlet-class>ej3.numeroAleatorio</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>segundoGrado</servlet-name>
+        <servlet-class>ej4.segundoGrado</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>numeroAleatorio</servlet-name>
+        <url-pattern>/numeroAleatorio</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>segundoGrado</servlet-name>
+        <url-pattern>/segundoGrado</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
