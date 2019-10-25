@@ -8,6 +8,14 @@
         <servlet-name>segundoGrado</servlet-name>
         <servlet-class>ej4.segundoGrado</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>texMayus</servlet-name>
+        <servlet-class>ej2.texMayus</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>verParametros</servlet-name>
+        <servlet-class>ej5.verParametros</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>numeroAleatorio</servlet-name>
         <url-pattern>/numeroAleatorio</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>segundoGrado</servlet-name>
         <url-pattern>/segundoGrado</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>texMayus</servlet-name>
+        <url-pattern>/texMayus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>verParametros</servlet-name>
+        <url-pattern>/verParametros</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
