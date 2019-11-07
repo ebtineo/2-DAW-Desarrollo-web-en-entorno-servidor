@@ -16,6 +16,14 @@
         <servlet-name>verParametros</servlet-name>
         <servlet-class>ej5.verParametros</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ejX1</servlet-name>
+        <servlet-class>ejX1.ejX1_vista</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ejX1_controlador</servlet-name>
+        <servlet-class>ejX1.ejX1_controlador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>numeroAleatorio</servlet-name>
         <url-pattern>/numeroAleatorio</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>verParametros</servlet-name>
         <url-pattern>/verParametros</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ejX1</servlet-name>
+        <url-pattern>/ejX1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ejX1_controlador</servlet-name>
+        <url-pattern>/ejX1_controlador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
