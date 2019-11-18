@@ -1,8 +1,7 @@
-package ejX1;
+package ej6;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Arrays;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author WorKeLid
  */
-public class ejX1_controlador extends HttpServlet {
+public class toSee extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,38 +30,10 @@ public class ejX1_controlador extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet ejX1_controlador</title>");            
+            out.println("<title>Servlet toSee</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ejX1_controlador at " + request.getContextPath() + "</h1>");
-            out.println("<br>");
-            
-            out.println("<form action='/bol2/ejX1_controlador' method='get'>");
-                out.println("<input type='text' name='busqueda'>");
-                out.println("<input type='submit' value='Buscar'><br>");
-            out.println("</form>");
-            
-            out.println("<form action='/bol2/ejX1_controlador' method='get'>");
-                out.println("Termino:<input type='text' name='termino'>");
-                out.println("Definicion:<input type='text' name='definicion'>");
-                out.println("<input type='submit' value='Insertar'><br>");
-            out.println("</form>");
-            
-            if (request.getParameterNames().hasMoreElements()) {
-                Diccionario dc = new Diccionario();
-                out.println("<p>");
-                
-                if (request.getParameter("busqueda") != null) {
-                    out.println("Busqueda: " + dc.buscar(request.getParameter("busqueda")));
-                } else {
-                    request.getParameterMap().forEach((clave, valor) ->
-                        out.println("Clave: " + clave + ", Valor: " + Arrays.deepToString(valor) + "<br />"));
-                        // dc.insertar(clave, Arrays.deepToString(valor));
-                }
-                
-                out.println("</p>");
-            }
-            
+            out.println("<h1>Servlet toSee at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }

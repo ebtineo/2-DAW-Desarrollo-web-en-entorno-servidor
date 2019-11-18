@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formulario ej6</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css.css" type="text/css">
+    </head>
+    <body>
+        <p>
+6. Desarrollar una pequeña aplicación web para registrar datos del personal de una
+organizción. La aplicación contendrá una página HTML con un formulario que permitirá
+introducir los datos de una persona (nombre, apellidos, categoría profesional , fecha de
+nacimiento, etc). También tendrá un servlet que recibirá los datos del formulario anterior y
+los escribirá en un fichero de texto. Además tendrá otro servlet que listará los datos del
+personal. El formulario debe tener algún control de tipo combo y algún grupo de
+checkbox.
+        </p>
+        <form action="/bol2/toFile">
+            <label>
+                Nombre: <input name="nombre" type="text">
+            </label><br>
+            <label>
+                Apellidos: <input name="apellidos" type="text">
+            </label><br>
+            <label>Categoria:</label><br>
+                Cat.1 <input name="categoria" type="radio" value="cat1"><br>
+                Cat.2 <input name="categoria" type="radio" value="cat2"><br>
+                Cat.3 <input name="categoria" type="radio" value="cat3"><br>
+                Cat.4 <input name="categoria" type="radio" value="cat4"><br>
+            <label>Nacimiento:
+                <input name="nacimiento" type="date">
+            </label><br>
+            <input type="submit" value="Enviar">
+        </form>
+    </body>
+</html>

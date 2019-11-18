@@ -6,7 +6,10 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/* ENUNCIADO
+4. Realizar una aplicación web que resuelva ecuaciones de segundo grado. 
+El resultado se mostrará en la misma página.
+*/
 public class segundoGrado extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

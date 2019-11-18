@@ -6,7 +6,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/* ENUNCIADO
+3. Realizar una aplicación web que pida dos números enteros al usuario y muestre
+un número aleatorio que esté dentro del rango comprendido por esos dos números.
+El resultado se mostrará junto al formulario, de forma que el usuario 
+pueda volver a pedir otro número sin cambiar de página
+*/
 /* - - - Ejercicio del profesor - - - */
 public class numeroAleatorio extends HttpServlet {
 

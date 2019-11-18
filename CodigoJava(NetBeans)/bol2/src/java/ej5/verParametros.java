@@ -8,7 +8,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+/* ENUNCIADO
+5. Realizar un servlet que muestre todos los parámetros recibidos en 
+la petición, sean cuales sean su número y sus nombres. 
+Mostrar todos los valores de cada parámetro
+*/
 public class verParametros extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

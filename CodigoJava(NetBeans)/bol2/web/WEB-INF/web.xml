@@ -24,6 +24,14 @@
         <servlet-name>ejX1_controlador</servlet-name>
         <servlet-class>ejX1.ejX1_controlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>toFile</servlet-name>
+        <servlet-class>ej6.toFile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>toSee</servlet-name>
+        <servlet-class>ej6.toSee</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>numeroAleatorio</servlet-name>
         <url-pattern>/numeroAleatorio</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>ejX1_controlador</servlet-name>
         <url-pattern>/ejX1_controlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>toFile</servlet-name>
+        <url-pattern>/toFile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>toSee</servlet-name>
+        <url-pattern>/toSee</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
