@@ -1,0 +1,4 @@
+﻿[nombre = Miguel; apellidos = Castañeda; categoriaPro = cat2; nacimiento = 2019-11-17;]
+[nombre = Pablo; apellidos = Castañeda; categoriaPro = cat3; nacimiento = 2019-11-02;]
+[nombre = Antonio; apellidos = Antony; categoriaPro = cat3; nacimiento = 2019-11-24;]
+[nombre = hola; apellidos = angel; categoriaPro = cat1; nacimiento = 2019-10-30;]

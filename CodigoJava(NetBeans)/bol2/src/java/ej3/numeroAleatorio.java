@@ -56,6 +56,12 @@ public class numeroAleatorio extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
                 out.println("<h1>Servlet numeroAleatorio at " + request.getContextPath() + "</h1>");
+                out.println("<p>" + 
+                        "3. Realizar una aplicación web que pida dos números enteros al usuario y muestre un número\n" +
+"aleatorio que esté dentro del rango comprendido por esos dos números. El resultado se\n" +
+"mostrará junto al formulario, de forma que el usuario pueda volver a pedir otro número sin\n" +
+"cambiar de página."
+                        + "</p>");
                 out.println("<form>");
                     out.println("<label>Limite inferior: </label>");
                     out.println("<input name='limiteInferior' type='number'>");
@@ -71,6 +77,7 @@ public class numeroAleatorio extends HttpServlet {
             } else {
                 out.println("<div style='color: red;'>" + error + "</div>");
             }
+            out.println("<hr><a href='/bol2/'>Volver al boletin 2</a>");
             out.println("</body>");
             out.println("</html>");
         }

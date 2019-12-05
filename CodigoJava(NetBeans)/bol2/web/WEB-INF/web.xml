@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <context-param>
+        <description>Raiz de NetBeans</description>
+        <param-name>root</param-name>
+        <param-value>C:\Users\WKL\Google_Drive\Formacion\Desarrollo_de_aplicaciones_web\Desarrollo web en entorno servidor\CodigoJava(NetBeans)</param-value>
+    </context-param>
     <servlet>
         <servlet-name>numeroAleatorio</servlet-name>
         <servlet-class>ej3.numeroAleatorio</servlet-class>
@@ -32,6 +37,14 @@
         <servlet-name>toSee</servlet-name>
         <servlet-class>ej6.toSee</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CelsiusFahrenheitConverter</servlet-name>
+        <servlet-class>ej7.CelsiusFahrenheitConverter</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>horaServidor</servlet-name>
+        <servlet-class>ej8.horaServidor</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>numeroAleatorio</servlet-name>
         <url-pattern>/numeroAleatorio</url-pattern>
@@ -63,6 +76,14 @@
     <servlet-mapping>
         <servlet-name>toSee</servlet-name>
         <url-pattern>/toSee</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CelsiusFahrenheitConverter</servlet-name>
+        <url-pattern>/CelsiusFahrenheitConverter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>horaServidor</servlet-name>
+        <url-pattern>/horaServidor</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

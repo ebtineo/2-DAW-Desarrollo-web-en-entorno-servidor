@@ -26,6 +26,8 @@ public class verParametros extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet verParametros at " + request.getContextPath() + "</h1>");
+            out.println("<p>5. Realizar un servlet que muestre todos los parámetros recibidos en la petición, sean cuales\n" +
+"sean su número y sus nombres. Mostrar todos los valores de cada parámetro</p>");
             out.println("<form action='/bol2/verParametros'>");
                 
                 out.println("<label>Texto: </label>");
@@ -90,6 +92,7 @@ public class verParametros extends HttpServlet {
                 }
                 
             out.println("</form>");
+            out.println("<hr><a href='/bol2/'>Volver al boletin 2</a>");
             out.println("</body>");
             out.println("</html>");
         }

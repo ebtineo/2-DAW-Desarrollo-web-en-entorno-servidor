@@ -54,6 +54,8 @@ public class segundoGrado extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet segundoGrado at " + request.getContextPath() + "</h1>");
+            out.println("<p>4. Realizar una aplicación web que resuelva ecuaciones de segundo grado. El resultado se\n" +
+"mostrará en la misma página.</p>");
             out.println("<form>");
                     out.println("<legend>Ax^2 + Bx + C = 0</legend>");
                     out.println("<label>A: </label>");
@@ -69,6 +71,7 @@ public class segundoGrado extends HttpServlet {
                         + res
                         + "</p>");
                 
+            out.println("<hr><a href='/bol2/'>Volver al boletin 2</a>");
             out.println("</body>");
             out.println("</html>");
         }

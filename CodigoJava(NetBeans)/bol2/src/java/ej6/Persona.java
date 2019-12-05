@@ -1,8 +1,9 @@
 package ej6;
 
-import java.io.FileOutputStream;
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /*
 6. Desarrollar una pequeña aplicación web para registrar datos del personal de una
@@ -43,14 +44,19 @@ public class Persona {
     
     public void toFile(String uri) throws IOException {
         String res = "[" +
-                "nombre: " + this.nombre +
-                "apellidos: " + this.apellidos + 
-                "categoriaPro: " + this.categoriaPro + 
-                "nacimiento: " + this.nacimiento +
-                "]\n";
-        FileWriter fw = new FileWriter("C:\\Users\\WKL\\Google_Drive\\Formacion\\Desarrollo_de_aplicaciones_web\\Desarrollo web en entorno servidor\\CodigoJava(NetBeans)\\bol2\\web");
-        fw.write(res);
-        fw.close();
+                "nombre = " + this.nombre + "; " +
+                "apellidos = " + this.apellidos + "; " +
+                "categoriaPro = " + this.categoriaPro + "; " +
+                "nacimiento = " + this.nacimiento + ";" +
+                "]";
+        
+        try {
+            PrintWriter pw = new PrintWriter(new FileWriter(uri, true));
+            pw.println(res);
+            pw.close();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
     
     @Override

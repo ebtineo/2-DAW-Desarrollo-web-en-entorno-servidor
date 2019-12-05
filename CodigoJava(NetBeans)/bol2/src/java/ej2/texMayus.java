@@ -42,6 +42,7 @@ public class texMayus extends HttpServlet {
                         out.print("alert('" + mayus + "')");
                     out.println("</script>");
                 }
+                out.println("<hr><a href='/bol2/'>Volver al boletin 2</a>");
                 out.println("</body>");
             out.println("</html>");
         }

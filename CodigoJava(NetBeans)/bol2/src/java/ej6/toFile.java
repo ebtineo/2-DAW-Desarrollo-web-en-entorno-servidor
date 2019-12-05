@@ -7,20 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/* ENUNCIADO
-6. Desarrollar una pequeña aplicación web para registrar datos del personal de una
-organizción. La aplicación contendrá una página HTML con un formulario que permitirá
-introducir los datos de una persona (nombre, apellidos, categoría profesional , fecha de
-nacimiento, etc). También tendrá un servlet que recibirá los datos del formulario anterior y
-los escribirá en un fichero de texto. Además tendrá otro servlet que listará los datos del
-personal. El formulario debe tener algún control de tipo combo (<select>) y algún grupo de
-checkbox.
-*/
-public class toFile extends HttpServlet {
-    
+public class toFile extends HttpServlet {    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         response.setContentType("text/html;charset=UTF-8");
+        
         try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -30,21 +22,44 @@ public class toFile extends HttpServlet {
             out.println("<body>");
             out.println("<h1>Servlet toFile at " + request.getContextPath() + "</h1>");
             
-            if (request.getHeader("referer").equals("http://localhost:8080/bol2/form6.html")) {
+            /* El request debe de venir del formulario ej6_form.html */
+            if (request.getHeader("referer").equals("http://localhost:8080/bol2/ej6_form.html")) {
                 out.println("<p>Accedido desde el formulario: " + request.getHeader("referer") + "</p>");
                 
+                /* En condiciones normales, evaluariamos la validez de los datos */
                 Persona p = new Persona(request.getParameter("nombre"), 
                     request.getParameter("apellidos"),
                     request.getParameter("categoria"), 
                     request.getParameter("nacimiento"));
                 
-                p.toFile("personas.txt");
+                /* 
+                    String ruta contiene la direccion donde quiero guardar el archivo de texto.
                 
-                out.println("<p>" + p.toString() + "</p>");
+                    getServletContext().getInitParameter() está accediendo al parametro root del web.xml
+                            <context-param>
+                                <description>Raiz de NetBeans</description>
+                                <param-name>root</param-name>
+                                <param-value>C:\Users\ . . . \CodigoJava(NetBeans)</param-value>
+                            </context-param>
+                    root va a ser la direccion raiz donde tengo los projectos netbeans
+                    Por eso luego tengo que especificar donde quiero el archivo
+                
+                        "\\bol2\\src\\java\\ej6" + "\\personas.txt"
+                
+                    Es necesario las dobles barras
+                */
+                String ruta = getServletContext().getInitParameter("root") + "\\bol2\\src\\java\\ej6" + "\\personas.txt";
+                
+                // La clase Persona tiene un metodo para escribir en una direccion dada
+                p.toFile(ruta);
+                
+                // El servlet toFile.java redirecciona a toSee.java
+                response.sendRedirect("/bol2/toSee");
                 
             } else {
                 out.println("<p>Necesitas acceder desde el formulario<p>");
                 out.println("<p>" + request.getHeader("referer") + "<p>");
+                out.println("<hr><a href='/bol2/ej6_form.html'>Volver al formulario</a>");
             }
             
             out.println("</body>");

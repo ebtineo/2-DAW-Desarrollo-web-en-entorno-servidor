@@ -1,11 +1,14 @@
-/* 
-    Created on : 13-nov-2019, 13:24:45
-    Author     : WorKeLid
-*/
 * {
     font-family: sans-serif;
 }
 
 form {
     border: 1px solid black;
+}
+
+ul {
+    background-color: lightgray;
+}
+ul li {
+    margin: 1em;
 }
