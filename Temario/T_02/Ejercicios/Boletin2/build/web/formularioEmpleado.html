@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    </head>
+    <body>
+        <form>
+            <label for='dni'>DNI</label>
+            <input type='text' name='dni' id='dni' required>
+            <br>
+            <label for='nombre'>Nombre</label>
+            <input type='text' name='nombre' id='nombre' required>
+            <br>
+            <label for='apellidos'>Apellidos</label>
+            <input type='text' name='apellidos' id='apellidos' required>
+            <br>
+            <label for='fechaNacimiento'>Fecha de Nacimiento</label>
+            <input type='date' name='fechaNacimiento' id='fechaNacimiento' required>
+            <br>
+            <label for='categoriaProfesional'>Categoría Profesional</label>
+            <select name='categoriaProfesional' id='categoriaProfesional' required>
+                <option value='Administrativo'>Administrativo</option>
+                <option value='Operario'>Operario</option>
+                <option value='Jefe de Departamento'>Jefe de Departamento</option>
+                <option value='Director'>Director</option>
+            </select>
+            <br>
+            <label>Sexo</label>
+            <br>
+            <label for='hombre'>Hombre</label>
+            <input type='radio' name='sexo' value='H' id='hombre'>
+            <label for='mujer'>Mujer</label>
+            <input type='radio' name='sexo' value='M' id='mujer'>
+            <br>
+            <label>Aficiones</label>
+            <br>
+            <label for='musica'>Música</label>
+            <input type='checkbox' name='aficiones' value='Musica' id='musica'>
+            <label for='cine'>Cine</label>
+            <input type='checkbox' name='aficiones' value='Cine' id='cine'>
+            <label for='deportes'>Deportes</label>
+            <input type='checkbox' name='aficiones' value='Deportes' id='deportes'>
+            <br>
+            <input type='submit' value='Aceptar'>
+        </form>
+    </body>
+</html>

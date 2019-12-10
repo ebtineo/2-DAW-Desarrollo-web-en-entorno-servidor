@@ -84,14 +84,14 @@ public class MostrarHTML extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void urlIntroducida(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_urlIntroducida
-        leerHTML(campoURL.getText());
+        leerHTML();
     }//GEN-LAST:event_urlIntroducida
 
-    public void leerHTML(String cadenaURL) {
+    public void leerHTML() {
         URL url = null;
         try {
             // Creamos una URL a partir del texto introducido
-            url = new URL(cadenaURL);
+            url = new URL(campoURL.getText());
         } catch (MalformedURLException e) {
             salida.setText("URL incorrecta");
             return;

@@ -21,7 +21,7 @@ public class FileClientV1 extends javax.swing.JFrame {
      * Puerto del servidor
      */
     public final static int PUERTO = 2223;
-    
+
     /** Creates new form FileClientV1 */
     public FileClientV1() {
         initComponents();
@@ -61,7 +61,7 @@ public class FileClientV1 extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 2, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("DejaVu Sans", 2, 12)); // NOI18N
         jLabel3.setText("descargando...");
 
         barraProgreso.setStringPainted(true);
@@ -71,12 +71,13 @@ public class FileClientV1 extends javax.swing.JFrame {
         panelDescargaLayout.setHorizontalGroup(
             panelDescargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelDescargaLayout.createSequentialGroup()
-                .addGap(144, 144, 144)
-                .addComponent(jLabel3)
-                .addContainerGap(143, Short.MAX_VALUE))
-            .addGroup(panelDescargaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(barraProgreso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelDescargaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelDescargaLayout.createSequentialGroup()
+                        .addGap(120, 120, 120)
+                        .addComponent(jLabel3))
+                    .addGroup(panelDescargaLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(barraProgreso, javax.swing.GroupLayout.DEFAULT_SIZE, 309, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panelDescargaLayout.setVerticalGroup(
@@ -86,7 +87,7 @@ public class FileClientV1 extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(barraProgreso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -94,19 +95,20 @@ public class FileClientV1 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(panelDescarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonDescargar)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(campoFichero)
-                            .addComponent(campoServidor, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE))))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addGap(61, 61, 61)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(panelDescarga, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(botonDescargar)
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel1))
+                            .addGap(18, 18, 18)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(campoFichero)
+                                .addComponent(campoServidor, javax.swing.GroupLayout.DEFAULT_SIZE, 174, Short.MAX_VALUE)))))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,9 +123,9 @@ public class FileClientV1 extends javax.swing.JFrame {
                     .addComponent(campoFichero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(31, 31, 31)
                 .addComponent(botonDescargar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(panelDescarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -132,7 +134,6 @@ public class FileClientV1 extends javax.swing.JFrame {
     private void descargarFichero(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descargarFichero
         new Descarga(this).start();
     }//GEN-LAST:event_descargarFichero
-
 
     public class Descarga extends Thread {
 
@@ -187,9 +188,17 @@ public class FileClientV1 extends javax.swing.JFrame {
                         if ((char)dato=='\n')
                             break;
                         else
-                            cadenaLongitud += (char)dato;
+                            // Si el servidor está en windows enviará /r/n al final de la línea
+                            if ((char)dato=='\r') {
+                                // nos saltamos el caracter \n
+                                entrada.skip(1);
+                                break;
+                            }
+                            else
+                                cadenaLongitud += (char)dato;
                     }
-                    longitud = Long.parseLong(cadenaLongitud);//longitud = Long.parseLong(entradaTexto.readLine());
+                    longitud = Long.parseLong(cadenaLongitud);
+                    //longitud = Long.parseLong(entradaTexto.readLine());
                     System.out.println("Recibiendo " + longitud + " bytes ...");
                     // Leemos el contenido binario enviado por el servidor
                     while ((dato=entrada.read())!=-1) {
@@ -221,7 +230,6 @@ public class FileClientV1 extends javax.swing.JFrame {
             }
         }
     }
-    
     /**
     * @param args the command line arguments
     */

@@ -12,11 +12,10 @@ import java.io.*;
 public class FileServerV1 {
     // Puerto del servidor
     public final static int PUERTO = 2223;
-    
+
     public static void main(String[] args) {
                 ServerSocket serverSocket = null;
         try {
-            // Creamos un socket de servidor para escuchar en el puerto especificado
             serverSocket = new ServerSocket(PUERTO);
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -56,30 +55,29 @@ public class FileServerV1 {
             PrintWriter salidaTexto;
             try {
                 entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                // Usamos una secuencia binaria para la salida
                 salida = socket.getOutputStream();
                 salidaTexto = new PrintWriter(salida,true);
                 File fichero = new File(entrada.readLine());
                 System.out.println("Transfiriendo :" + fichero.getAbsolutePath());
-                // Abrimos el fichero solicitado por el cliente
                 FileInputStream entradaFichero = new FileInputStream(fichero);
                 // Primero enviamos una linea de texto con la longitud del fichero en bytes
                 salidaTexto.println(fichero.length());
-                byte[] datos = new byte[4096];
+                byte[] dato = new byte[4096];
                 int numBytes;
                 // Y enviamos su contenido byte a byte
-                while ((numBytes = entradaFichero.read(datos))>0)
-                    salida.write(datos,0,numBytes);
+                while ((numBytes = entradaFichero.read(dato))>0)
+                    salida.write(dato,0,numBytes);
                 entradaFichero.close();
                 salida.close();
                 entrada.close();
-                socket.close();
-            } catch (IOException e) {
+                //socket.close();
+            } catch (Exception e) {
                 System.err.println(e.getMessage());
                 try {
                     socket.close();
                 } catch (IOException ex) {}
             }
         }
+
     }
 }

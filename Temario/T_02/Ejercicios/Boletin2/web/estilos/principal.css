@@ -1,0 +1,22 @@
+/* 
+    Created on : 08-oct-2017, 22:22:40
+    Author     : jose
+*/
+
+body {
+    background-color: lightgray;
+    color: darkblue;
+    font-family: 'verdana';
+}
+
+h2 {
+    color: darkslateblue;
+}
+
+h3 {
+    color: cornflowerblue;
+}
+
+input {
+    text-align: right;
+}

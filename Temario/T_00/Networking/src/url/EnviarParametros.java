@@ -11,7 +11,7 @@ public class EnviarParametros {
     public static void main(String[] args) {
         URL url = null;
         try {
-            url = new URL("http://localhost:8080/Web/cabeceras.jsp");
+            url = new URL("http://localhost:8080/EjemplosJSP/cabeceras.jsp");
         } catch (Exception e) {}
         URLConnection conexion;
         try {
@@ -27,7 +27,7 @@ public class EnviarParametros {
             BufferedWriter salida = new BufferedWriter(new OutputStreamWriter(conexion.getOutputStream()));
             //salida.newLine();
             //salida.newLine();
-            String parametros = "val=televisor" /*"parametro=valor"*/;
+            String parametros = "nombre=José+Antonio" /*"parametro=valor"*/;
             //salida.write("Content-Length : " + parametros.length() + "\n");
             salida.write(parametros);
             salida.close();

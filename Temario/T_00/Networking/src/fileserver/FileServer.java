@@ -1,3 +1,7 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 package fileserver;
 
@@ -9,19 +13,15 @@ import java.io.*;
  * @author jose
  */
 public class FileServer {
-    // Puerto del servidor
-    public final static int PUERTO = 2222;
-    
     public static void main(String[] args) {
                 ServerSocket serverSocket = null;
         try {
-            // Creamos un socket de servidor para escuchar en el puerto especificado
-            serverSocket = new ServerSocket(PUERTO);
+            serverSocket = new ServerSocket(2222);
         } catch (Exception e) {
             System.err.println(e.getMessage());
             System.exit(-1);
         }
-        System.out.println("FileServer: Atendiendo peticiones de conexión en el puerto " + PUERTO);
+        System.out.println("FileServer: Atendiendo peticiones de conexión en el puerto 2222");
 
         // Socket para conectarse al cliente
         Socket clientSocket = null;
@@ -51,14 +51,11 @@ public class FileServer {
             OutputStream salida;
             try {
                 entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                // Usamos una secuencia binaria para la salida
                 salida = socket.getOutputStream();
                 File fichero = new File(entrada.readLine());
                 System.out.println("Transfiriendo :" + fichero.getAbsolutePath());
-                // Abrimos el fichero solicitado por el cliente
                 FileInputStream entradaFichero = new FileInputStream(fichero);
                 int dato;
-                // Y enviamos su contenido byte a byte
                 while ((dato = entradaFichero.read())!=-1)
                     salida.write(dato);
                 entradaFichero.close();

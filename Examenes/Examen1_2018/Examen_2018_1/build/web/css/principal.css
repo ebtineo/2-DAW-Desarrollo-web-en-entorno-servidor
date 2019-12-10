@@ -1,0 +1,79 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17-dic-2018, 21:53:10
+    Author     : jose
+*/
+
+body {
+    background-image: url('../imagenes/tarjeta-navidad-01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+    font-size: x-large;
+    color: yellow;
+}
+#div_imagen {
+    background-image: url('../imagenes/arbol-navidad.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    background-color: khaki;
+    /*background-color: navy;*/
+    color: red;
+    width: 675px;
+    height: 840px;
+    margin-left: 20%;
+    margin-right: auto;
+}
+
+div.fila {
+    height: 80px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+input {
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+div.bola {
+    margin-left: 10px;
+    margin-right: 20px;    
+}
+
+form {
+    display: inline-block;       
+}
+
+div.panel {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    opacity: 0.6;
+}
+
+div.puntuacion {
+    color: white;
+    font-size: larger;
+}
+
+#div_felicitacion {
+    background-image: url('../imagenes/felicitacion.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 600px;
+    height: 305px;
+    margin-left:auto;
+    margin-right: auto;
+}
+
+h2 {
+    text-align: center;
+}

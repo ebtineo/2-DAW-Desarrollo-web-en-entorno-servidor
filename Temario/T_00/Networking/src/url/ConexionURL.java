@@ -114,7 +114,9 @@ public class ConexionURL extends javax.swing.JFrame {
                 // Obtiene una secuencia de salida de caracteres para enviar la peticion
                 salida = new OutputStreamWriter(conexion.getOutputStream());
                 // Envia la peticion
+                //salida.write("\n\n");
                 salida.write(campoEntrada.getText());
+                salida.close();
                 String linea;
                 // Obtiene una secuencia de entrada de caracteres para leer
                 // la respuesta
@@ -134,6 +136,7 @@ public class ConexionURL extends javax.swing.JFrame {
             // Realiza la conexion y la configura para poder enviar una peticion
             conexion = (new URL(campoURL.getText())).openConnection();
             conexion.setDoOutput(true);
+            conexion.setRequestProperty("METHOD", "POST");
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }

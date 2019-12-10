@@ -157,9 +157,7 @@ public class ConexionSocket extends javax.swing.JFrame {
             // Asociamos el flujo saliente de la conexión a un objeto PrintWriter con la opción autoflush activada
             salida = new PrintWriter(conexion.getOutputStream(),true);
             // Creamos un hilo que atenderá a los datos recibidos desde el servidor
-            new LeerEntradaConexion().start();
-            // Limpiamos el área de texto
-            texto.setText("");
+            (new LeerEntradaConexion()).start();
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
@@ -167,8 +165,8 @@ public class ConexionSocket extends javax.swing.JFrame {
 
     public void desconectar() {
         try {
-            //entrada.close();
-            //salida.close();
+            //    entrada.close();
+            //    salida.close();
             conexion.close();
         } catch (Exception e) {
             System.err.println(e.getMessage());

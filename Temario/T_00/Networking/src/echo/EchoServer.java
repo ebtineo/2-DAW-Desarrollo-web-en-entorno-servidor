@@ -3,14 +3,12 @@ package echo;
 
 import java.net.*;
 import java.io.*;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * 
+ *
  * @author jose
  */
-
 public class EchoServer {
 
     public static void main(String[] args) {
@@ -52,7 +50,6 @@ public class EchoServer {
                 String linea;
                 while ((linea = entrada.readLine()) != null) {
                     salida.println(linea);
-                    System.out.println(linea);
                 }
                 // Cerramos la conexion
                 conexion.close();

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <form action="Parametros" method="post">
+                <label>Texto</label>
+                <input type="text" name="texto">
+                <br>
+                <label>Numero</label>
+                <input type="number" step="0.01" name="numero">
+                <br>
+                <label>Fecha</label>
+                <input type="date" name="fecha" required>
+                <br>
+                <label>CheckBox</label>
+                <input type="checkbox" name="checkbox" value="activado">
+                <br>
+                <label>Select</label>
+                <select name="select">
+                    <option>Primera opción</option>
+                    <option>Segunda opción</option>
+                </select>
+                <br>
+                <label>Radio</label>
+                <input type="radio" name="radio" value="1">
+                <input type="radio" name="radio" value="2">
+                <br>
+                Actividad
+                <input type="checkbox" name="actividad" value="Estudia">
+                <input type="checkbox" name="actividad" value="Trabaja">
+                <br>
+                Busqueda
+                <input type="search" name="busqueda">
+                <br>
+                Teléfono
+                <input type="tel" name="telefono">
+                <input type="submit" name="submit" value="Ok">
+            </form>
+        </div>
+    </body>
+</html>
