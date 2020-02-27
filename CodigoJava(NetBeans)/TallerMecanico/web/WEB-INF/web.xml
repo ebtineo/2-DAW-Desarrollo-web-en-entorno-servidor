@@ -12,6 +12,7 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>2</load-on-startup>
     </servlet>
+    <!--
     <servlet>
         <servlet-name>indexController</servlet-name>
         <servlet-class>controller.indexController</servlet-class>
@@ -28,6 +29,7 @@
         <servlet-name>signinController</servlet-name>
         <servlet-class>controller.signinController</servlet-class>
     </servlet>
+    -->
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -49,6 +51,8 @@
         <url-pattern>*.css</url-pattern>
         <url-pattern>*.js</url-pattern>
     </servlet-mapping>
+    
+    <!--
     <servlet-mapping>
         <servlet-name>indexController</servlet-name>
         <url-pattern>/indexController</url-pattern>
@@ -65,9 +69,11 @@
         <servlet-name>signinController</servlet-name>
         <url-pattern>/signinController</url-pattern>
     </servlet-mapping>
+    -->
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
+    
     <welcome-file-list>
         <welcome-file>redirect.jsp</welcome-file>
     </welcome-file-list>

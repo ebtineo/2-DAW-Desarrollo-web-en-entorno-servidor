@@ -27,7 +27,7 @@ public class indexController extends HttpServlet {
         }
         request.setAttribute("contenido", contenido);
         // request.getRequestDispatcher("/index").forward(request, response);
-        // response.sendRedirect("/index");
+        response.sendRedirect("/index");
     }
 
     @Override
